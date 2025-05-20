@@ -12,7 +12,7 @@ const SignInPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/signin", { email, password });
+      const res = await axios.post("http://localhost:5000/api/auth/signin", { email, password });
       localStorage.setItem("token", res.data.token);
       toast.success("Signed in successfully");
       navigate("/blogs");
